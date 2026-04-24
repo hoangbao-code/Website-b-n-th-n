@@ -18,7 +18,7 @@ export default function Hero() {
         >
           <div className="flex items-center gap-2">
             <span className="status-dot" />
-            <span className="text-xs font-mono uppercase tracking-widest text-[var(--text-dim)]">Available for Freelance</span>
+            <span className="text-xs font-mono uppercase tracking-widest text-[var(--text-dim)]">Contact For Work</span>
           </div>
           <h1 className="hero-title">
             Hi, I'm <br />
@@ -90,7 +90,7 @@ export default function Hero() {
           </div>
           <div>
             <p className="text-white font-bold text-sm">Cung cấp dịch vụ tối ưu</p>
-            <p className="text-[var(--text-dim)] text-xs">Tăng tỷ lệ chuyển đổi ROI</p>
+            <p className="text-[var(--text-dim)] text-xs">An toàn - Uy tín - Bảo mật</p>
           </div>
         </motion.div>
       </div>
