@@ -29,7 +29,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
         <a href="#" className="text-xl font-bold tracking-tighter">
-          G.Bảo<span className="text-[var(--accent)]">.</span>
+          Hoàng Xuân Gia Bảo<span className="text-[var(--accent)]">.</span>
         </a>
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (

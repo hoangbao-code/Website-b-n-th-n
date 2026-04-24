@@ -2,7 +2,6 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
 import Contact from './components/Contact';
-import MusicPlayer from './components/MusicPlayer';
 
 export default function App() {
   return (
@@ -15,8 +14,6 @@ export default function App() {
         <Services />
         <Contact />
       </main>
-
-      <MusicPlayer />
     </div>
   );
 }

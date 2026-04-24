@@ -89,7 +89,7 @@ export default function Hero() {
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
           </div>
           <div>
-            <p className="text-white font-bold text-sm">Tối ưu Quảng cáo</p>
+            <p className="text-white font-bold text-sm">Cung cấp dịch vụ tối ưu</p>
             <p className="text-[var(--text-dim)] text-xs">Tăng tỷ lệ chuyển đổi ROI</p>
           </div>
         </motion.div>
