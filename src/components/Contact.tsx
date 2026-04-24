@@ -1,10 +1,7 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
-import { ArrowRight, X } from "lucide-react";
+import { motion } from "motion/react";
+import { ArrowRight } from "lucide-react";
 
 export default function Contact() {
-  const [showZaloQR, setShowZaloQR] = useState(false);
-
   return (
     <section id="contact" className="py-24 px-6 md:px-12 mb-24 relative">
       <div className="max-w-5xl mx-auto space-y-12">
@@ -94,8 +91,10 @@ export default function Contact() {
           </a>
 
           {/* Zalo */}
-          <button
-            onClick={() => setShowZaloQR(true)}
+          <a
+            href="https://zalo.me/0354084364"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group relative flex flex-col items-center p-8 rounded-2xl glass hover:bg-[#0068FF]/10 transition-all duration-300 border border-white/5 hover:border-[#0068FF]/50 overflow-hidden w-full"
           >
             <div className="absolute inset-0 bg-gradient-to-b from-[#0068FF]/0 to-[#0068FF]/5 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -112,50 +111,9 @@ export default function Contact() {
             <div className="absolute bottom-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0 text-[#0068FF]">
               <ArrowRight size={20} />
             </div>
-          </button>
+          </a>
         </motion.div>
       </div>
-
-      {/* Zalo Modal */}
-      <AnimatePresence>
-        {showZaloQR && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
-            onClick={() => setShowZaloQR(false)}
-          >
-            <motion.div
-              initial={{ scale: 0.95, opacity: 0, y: 20 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.95, opacity: 0, y: 20 }}
-              className="relative p-6 bg-[#2B3B4C] rounded-2xl shadow-2xl max-w-sm w-full"
-              onClick={e => e.stopPropagation()}
-            >
-              <button
-                onClick={() => setShowZaloQR(false)}
-                className="absolute top-4 right-4 text-white/50 hover:text-white transition-colors"
-                title="Đóng"
-              >
-                <X size={24} />
-              </button>
-              <div className="text-center space-y-4">
-                <h3 className="text-xl font-bold text-white mb-6">Mã QR Zalo</h3>
-                {/* Dummy placeholder for QR Code, ideally loaded from state or asset */}
-                <div className="bg-white p-2 rounded-xl inline-block mx-auto overflow-hidden">
-                  <div className="w-64 md:w-72 flex items-center justify-center">
-                     <img src="https://placehold.co/500x500/ffffff/0068ff?text=++Zalo+QR++&font=roboto" alt="Zalo QR Placeholder" className="w-full h-auto rounded-xl shadow-lg" />
-                  </div>
-                </div>
-                <p className="text-sm text-zinc-300 pt-2">
-                  Quét mã để kết nối với tôi trên Zalo
-                </p>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </section>
   );
 }
