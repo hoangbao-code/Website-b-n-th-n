@@ -143,9 +143,9 @@ export default function Contact() {
               <div className="text-center space-y-4">
                 <h3 className="text-xl font-bold text-white mb-6">Mã QR Zalo</h3>
                 {/* Dummy placeholder for QR Code, ideally loaded from state or asset */}
-                <div className="bg-transparent p-0 rounded-xl inline-block mx-auto overflow-hidden">
+                <div className="bg-white p-2 rounded-xl inline-block mx-auto overflow-hidden">
                   <div className="w-64 md:w-72 flex items-center justify-center">
-                     <img src="/zalo-qr.png" alt="Zalo QR" className="w-full h-auto rounded-xl shadow-lg border border-white/10" />
+                     <img src="https://placehold.co/500x500/ffffff/0068ff?text=++Zalo+QR++&font=roboto" alt="Zalo QR Placeholder" className="w-full h-auto rounded-xl shadow-lg" />
                   </div>
                 </div>
                 <p className="text-sm text-zinc-300 pt-2">

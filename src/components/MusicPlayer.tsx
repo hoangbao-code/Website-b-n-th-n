@@ -133,26 +133,41 @@ export default function MusicPlayer() {
       </div>
 
       {/* Right section: Actions & Volume Control */}
-      <div className="flex items-center justify-end w-1/3 min-w-[150px] gap-3 sm:gap-4 hidden sm:flex">
-        <span className="text-xs text-[var(--text-dim)] mr-2">Vol</span>
-        <div className="flex items-center gap-2 group/volume w-24">
-          <div className="relative w-full h-1 bg-white/10 rounded-full flex items-center group-hover/volume:h-1.5 transition-all">
-            <div 
-              className="absolute top-0 left-0 h-full bg-white rounded-full group-hover/volume:bg-[var(--accent)] transition-colors pointer-events-none" 
-              style={{ width: `${isMuted ? 0 : volume * 100}%` }}
-            ></div>
-            <input
-              type="range"
-              min="0"
-              max="1"
-              step="0.01"
-              value={isMuted ? 0 : volume}
-              onChange={handleVolumeChange}
-              className="absolute inset-0 w-full opacity-0 cursor-pointer z-10"
-              title="Volume"
-            />
-          </div>
+      <div className="flex items-center justify-end w-1/3 min-w-[150px] gap-2 hidden sm:flex">
+        <button onClick={toggleMute} className="text-[var(--text-dim)] hover:text-white transition-colors cursor-pointer">
+          {isMuted || volume === 0 ? <VolumeX size={16} /> : <Volume2 size={16} />}
+        </button>
+        <div className="flex items-center group/volume w-24 relative h-8">
+          {/* Visual Track - Dim background */}
+          <div className="absolute left-0 right-0 top-1/2 -mt-[2px] h-1 bg-white/20 rounded-full group-hover/volume:h-[5px] transition-all pointer-events-none"></div>
+          
+          {/* Visual Level - White by default, Green on hover */}
+          <div 
+            className="absolute left-0 top-1/2 -mt-[2px] h-1 bg-white rounded-full group-hover/volume:bg-[var(--accent)] group-hover/volume:h-[5px] transition-all pointer-events-none" 
+            style={{ width: `${isMuted ? 0 : volume * 100}%` }}
+          ></div>
+          
+          {/* Thumb Dot - Appears on hover */}
+          <div 
+            className="absolute top-1/2 -mt-[6px] w-3 h-3 bg-white rounded-full opacity-0 group-hover/volume:opacity-100 shadow pointer-events-none transition-opacity"
+            style={{ left: `calc(${isMuted ? 0 : volume * 100}% - 6px)` }}
+          ></div>
+
+          {/* Invisible Interactive Input */}
+          <input
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            value={isMuted ? 0 : volume}
+            onChange={handleVolumeChange}
+            className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10 m-0"
+            title="Volume"
+          />
         </div>
+        <span className="text-xs text-[var(--text-dim)] font-mono w-9 text-right ml-1 select-none">
+          {isMuted ? '0%' : `${Math.round(volume * 100)}%`}
+        </span>
       </div>
     </div>
   );
